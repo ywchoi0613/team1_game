@@ -25,6 +25,7 @@ void draw() {
 }
 void collide() {
   for (int i=0; i<3; i++) {
-    if ((mouseX-a[i])<200 & b[i] > float(580)) v[i] = -v[i];
+    if (sqrt((mouseX-a[i])*(mouseX-a[i]))<200 && b[i] > float(580)) v[i] = -v[i];
+    else if (sqrt((mouseX-a[i])*(mouseX-a[i]))>150 && b[i] > float(650)) stop();
   }
 }
